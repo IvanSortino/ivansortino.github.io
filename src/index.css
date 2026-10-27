@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* TODO: take colours from the app's theme */
+@theme {
+  --color-bg: #fbf8ff;
+  --color-fg: #1b1b21;
+  --color-muted: #5d5e67;
+  --color-accent: #2e8b78;
+  --color-on-accent: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #121318;
+    --color-fg: #e4e1e9;
+    --color-muted: #c6c5d0;
+    --color-accent: #7fd6c2;
+    --color-on-accent: #00382e;
+  }
+}
+
+:root { color-scheme: light dark; }
+body { @apply bg-bg text-fg font-sans; }
