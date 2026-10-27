@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 18 72 72">
+  <!-- Play Store icon: the launcher icon's visible 72dp, full bleed (Play rounds the corners). Mirrors ic_launcher_*. -->
+  <rect x="18" y="18" width="72" height="72" fill="#26A69A"/>
+  <g fill="#47B3A9">
+    <rect x="48" y="32" width="12" height="12" rx="3"/>
+    <rect x="64" y="48" width="12" height="12" rx="3"/>
+    <rect x="48" y="64" width="12" height="12" rx="3"/>
+  </g>
+  <g fill="#FFFFFF">
+    <rect x="32" y="32" width="12" height="12" rx="3"/>
+    <rect x="32" y="48" width="12" height="12" rx="3"/>
+    <rect x="32" y="64" width="12" height="12" rx="3"/>
+    <rect x="48" y="48" width="12" height="12" rx="3"/>
+    <rect x="64" y="32" width="12" height="12" rx="3"/>
+    <rect x="64" y="64" width="12" height="12" rx="3"/>
+  </g>
+</svg>
