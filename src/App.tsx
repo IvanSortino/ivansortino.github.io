@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone } from "./Phone";
+import { RateChart } from "./RateChart";
 
 const PLAY = "https://play.google.com/store/apps/details?id=app.kept.habits";
 
@@ -13,7 +14,7 @@ const FEATURES = [
     text: "Month, day and agenda views. Events and to-dos in one agenda, and any event can become a to-do." },
   { clip: "todos", eyebrow: "To-dos", title: "To-dos that nag just enough",
     text: "Priorities that remind you, steps that tick the to-do off when they're all done, and repeats." },
-  { clip: "routines", eyebrow: "Streaks and stats", title: "Watch your streaks grow",
+  { clip: "routines", chart: true, eyebrow: "Streaks and stats", title: "Watch your streaks grow",
     text: "Heatmaps, week grids and a history of every day. Rates, streaks and trends for every habit, against the month before." },
   { clip: "focus", eyebrow: "Focus", title: "Focus, in rounds",
     text: "A timer with breaks and presets, a calm full-screen clock, and every session kept." },
@@ -85,6 +86,7 @@ export default function App() {
               <p className="text-sm font-bold uppercase tracking-widest text-amber">{f.eyebrow}</p>
               <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-balance md:text-4xl">{f.title}</h2>
               <p className="mt-4 text-lg leading-relaxed text-muted text-pretty">{f.text}</p>
+              {f.chart && <RateChart />}
             </div>
             <Phone clip={f.clip} still={f.still} alt={f.title} />
           </motion.section>
