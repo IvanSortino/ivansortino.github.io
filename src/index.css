@@ -11,11 +11,11 @@
   --color-amber: #b45309;
   --color-card: #fff;
   --color-line: #faeee1;
-  --font-sans: "Roboto Flex", Roboto, system-ui, sans-serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
   --shadow-clay: 0 1px 2px rgb(120 80 20 / 0.06), 0 8px 24px rgb(120 80 20 / 0.08), 0 24px 64px rgb(120 80 20 / 0.08);
 }
 
 :root { color-scheme: light; }
 body { @apply bg-bg text-fg font-sans antialiased; }
-h1, h2 { font-variation-settings: "opsz" 72; }
+h1, h2 { font-weight: 900; }
 :focus-visible { @apply outline-3 outline-offset-2 outline-primary; }

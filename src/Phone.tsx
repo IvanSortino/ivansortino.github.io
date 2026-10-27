@@ -24,8 +24,8 @@ export function Phone({ clip, still, alt, className = "" }: { clip?: string; sti
           <video
             ref={video}
             className="block aspect-[9/20] w-full rounded-[2.1rem]"
-            src={`/clips/${clip}.mp4`}
-            poster={`/clips/${clip}.jpg`}
+            src={`clips/${clip}.mp4`}
+            poster={`clips/${clip}.jpg`}
             muted
             loop
             playsInline
@@ -44,7 +44,7 @@ export function Phone({ clip, still, alt, className = "" }: { clip?: string; sti
           </button>
         </>
       ) : (
-        <img className="block aspect-[9/20] w-full rounded-[2.1rem]" src={`/assets/stills/${still}.jpg`} alt={alt} loading="lazy" />
+        <img className="block aspect-[9/20] w-full rounded-[2.1rem]" src={`assets/stills/${still}.jpg`} alt={alt} loading="lazy" />
       )}
     </div>
   );

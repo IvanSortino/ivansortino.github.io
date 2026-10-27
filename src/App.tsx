@@ -54,7 +54,7 @@ export default function App() {
     <>
       <header className="mx-auto grid max-w-5xl items-center gap-12 px-4 pt-14 pb-16 text-center md:grid-cols-2 md:pt-24 md:text-left">
         <motion.div {...rise}>
-          <img className="mx-auto rounded-[22%] shadow-clay md:mx-0" src="/assets/icon-512.png" alt="" width={72} height={72} />
+          <img className="mx-auto rounded-[22%] shadow-clay md:mx-0" src="assets/icon-512.png" alt="" width={72} height={72} />
           <h1 className="mt-5 text-5xl font-extrabold tracking-tight md:text-6xl">Kept</h1>
           <p className="mt-4 text-xl leading-relaxed text-muted">
             Habits, to-dos, calendar, journal and groceries in one calm app. Offline, and synced to your own Google Drive.
@@ -98,8 +98,8 @@ export default function App() {
       </section>
 
       <footer className="flex flex-wrap justify-center gap-x-6 px-4 pb-12 text-muted">
-        <a className="inline-flex min-h-11 items-center underline" href="/kept-policy/">Privacy policy</a>
-        <a className="inline-flex min-h-11 items-center underline" href="/kept-policy/it">Informativa sulla privacy</a>
+        <a className="inline-flex min-h-11 items-center underline" href="https://ivansortino.github.io/kept-policy/">Privacy policy</a>
+        <a className="inline-flex min-h-11 items-center underline" href="https://ivansortino.github.io/kept-policy/it">Informativa sulla privacy</a>
         <a className="inline-flex min-h-11 items-center underline" href="mailto:kept.habit.tracker@gmail.com">kept.habit.tracker@gmail.com</a>
       </footer>
     </>
