@@ -1,22 +1,21 @@
 @import "tailwindcss";
 
-/* TODO: take colours from the app's theme */
+/* Light only. Habit-tracker palette from ui-ux-pro-max (warm background, amber highlights) around Kept's teal;
+   every text pair is at least 4.5:1. */
 @theme {
-  --color-bg: #fbf8ff;
-  --color-fg: #1b1b21;
-  --color-muted: #5d5e67;
-  --color-accent: #2e8b78;
-  --color-on-accent: #fff;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #121318;
-    --color-fg: #e4e1e9;
-    --color-muted: #c6c5d0;
-    --color-accent: #7fd6c2;
-    --color-on-accent: #00382e;
-  }
+  --color-bg: #fffbeb;
+  --color-fg: #0f172a;
+  --color-muted: #475569;
+  --color-primary: #0f766e;
+  --color-on-primary: #fff;
+  --color-amber: #b45309;
+  --color-card: #fff;
+  --color-line: #faeee1;
+  --font-sans: "Roboto Flex", Roboto, system-ui, sans-serif;
+  --shadow-clay: 0 1px 2px rgb(120 80 20 / 0.06), 0 8px 24px rgb(120 80 20 / 0.08), 0 24px 64px rgb(120 80 20 / 0.08);
 }
 
-:root { color-scheme: light dark; }
-body { @apply bg-bg text-fg font-sans; }
+:root { color-scheme: light; }
+body { @apply bg-bg text-fg font-sans antialiased; }
+h1, h2 { font-variation-settings: "opsz" 72; }
+:focus-visible { @apply outline-3 outline-offset-2 outline-primary; }
