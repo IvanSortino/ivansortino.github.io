@@ -22,7 +22,7 @@ const TOUR: TourStep[] = [
     text: "A timer with breaks and presets, a calm full-screen clock, and every session kept.",
     zoom: { scale: 1.3, x: 0.5, y: 0.56, label: "Today: Spanish 25 min, Deep work 25 min" } },
   { shot: "journal", eyebrow: "Journal", title: "A journal for every day",
-    text: "Write the day down, beside the habits you kept. Private notes stay covered." },
+    text: "Write the day down, or a note for each habit you kept, in a full-screen writing view. Private notes stay covered." },
   { shot: "groceries", eyebrow: "Groceries and recipes", title: "A list that remembers",
     text: "Sorted by aisle, it knows what you usually buy, and a recipe fills the list in one tap." },
   { shot: "widgets", eyebrow: "Widgets", title: "Tick it from the home screen",
