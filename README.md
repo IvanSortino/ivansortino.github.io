@@ -6,5 +6,5 @@ by `.github/workflows/deploy.yml` on every push to `main`.
 - `npm i`, then `npm run dev` to preview; `npm run build` writes `dist/`.
 - Keep `public/googleae333c1ca2e00843.html`: Search Console verification.
 - Privacy policy lives in the `kept-policy` repo (`/kept-policy/`), linked from the app: do not move it.
-- Screenshots: `tracker/store/screenshots/*.png` resized to 540px JPEGs in `public/assets/shots/`.
-- `src/components/ui/sticky-scroll-cards.tsx` is Componentry's Sticky Scroll Cards, adapted for phone screenshots.
+- Clips: `tracker/brag-output/work/takes/*.mp4` (the launch video takes) as 432x960 H.264 in `public/clips/`, with a poster each; stills from `tracker/store/screenshots/raw/` in `public/assets/stills/`.
+- `src/Phone.tsx` plays a clip only while it is on screen, and never with reduced motion.
