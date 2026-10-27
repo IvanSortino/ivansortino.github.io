@@ -10,7 +10,7 @@ const TOUR: TourStep[] = [
     text: "Habits, to-dos and your calendar in one list. Tap or swipe to tick." },
   { shot: "health", eyebrow: "Health Connect", title: "Fitbit ticks them for you",
     text: "Steps, sleep, water and workouts come in from Health Connect and tick the habits they belong to.",
-    zoom: { scale: 1.6, x: 0.72, y: 0.62, label: "8,412 steps ticked Walk; 7:42 of sleep ticked Sleep 7 h" } },
+    zoom: { scale: 1.6, x: 0.72, y: 0.53, label: "8,412 steps ticked Walk; 7:42 of sleep ticked Sleep 7 h" } },
   { shot: "calendar", eyebrow: "Calendar", title: "Your calendar, beside your habits",
     text: "Month, day and agenda views. Events and to-dos in one agenda, and any event can become a to-do." },
   { shot: "todos", eyebrow: "To-dos", title: "To-dos that nag just enough",
