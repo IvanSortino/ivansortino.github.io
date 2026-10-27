@@ -19,3 +19,27 @@
 body { @apply bg-bg text-fg font-sans antialiased; }
 h1, h2 { font-weight: 900; }
 :focus-visible { @apply outline-3 outline-offset-2 outline-primary; }
+
+/* Hero heatmap (Heatmap.tsx): 53 weeks of 7 days, sized to the width; on a phone the oldest weeks run off the left. */
+.heat { --cell: clamp(14px, calc((100vw - 48px - 52 * 5px) / 53), 22px); display: grid; grid-template-columns: repeat(53, var(--cell)); gap: 5px; justify-content: center; }
+.heat-months { margin-bottom: 8px; font-size: 12px; font-weight: 700; color: var(--color-muted); }
+.heat-days { grid-template-rows: repeat(7, var(--cell)); grid-auto-flow: column; }
+.heat-days i { border-radius: 30%; background: #f3e8d2; animation: heat-fill 450ms ease-out both; }
+.heat-days i[data-l="1"] { background: #b9e2d8; }
+.heat-days i[data-l="2"] { background: #6cc4b4; }
+.heat-days i[data-l="3"] { background: #26a69a; }
+.heat-days i[data-l="4"], .heat-days .today { background: var(--color-primary); }
+.heat-days .future { background: none; }
+.heat-days .today { position: relative; outline: 3px solid var(--color-amber); outline-offset: 2px; animation: heat-pop 500ms cubic-bezier(.34, 1.56, .64, 1) 1.6s both; }
+.heat-tip { position: absolute; right: 0; bottom: calc(100% + 12px); padding: 8px 12px; border-radius: 12px; background: var(--color-fg); color: var(--color-bg); font-size: 13px; font-weight: 700; white-space: nowrap; animation: heat-tip 400ms ease-out 1.9s both; }
+.heat-tip::after { content: ""; position: absolute; top: 100%; right: calc(var(--cell) / 2 - 6px); border: 6px solid transparent; border-top-color: var(--color-fg); }
+@keyframes heat-fill { from { background: #f3e8d2; } }
+@keyframes heat-pop { from { scale: .4; opacity: 0; } }
+@keyframes heat-tip { from { translate: 0 6px; opacity: 0; } }
+@media (max-width: 767px) {
+  .heat { --cell: 18px; justify-content: end; padding-right: 20px; }
+  .heat-months { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heat-days i, .heat-days .today, .heat-tip { animation: none; }
+}

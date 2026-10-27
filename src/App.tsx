@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Heatmap } from "./Heatmap";
 import { ScrollTour, type TourStep } from "./ScrollTour";
 
 const PLAY = "https://play.google.com/store/apps/details?id=app.kept.habits";
@@ -33,7 +34,7 @@ const TOUR: TourStep[] = [
     text: "Built in Kotlin and Material 3. Light, dark and your wallpaper's colours." },
 ];
 
-const PROMISES = ["Works offline", "No ads", "No account", "Syncs to your Drive"];
+const POLICY = "https://ivansortino.github.io/kept-policy/";
 
 const rise = {
   initial: { opacity: 0, y: 48 },
@@ -42,13 +43,13 @@ const rise = {
   transition: { type: "spring", stiffness: 70, damping: 18 },
 } as const;
 
-function PlayButton() {
+function PlayButton({ small = false }) {
   return (
     <a
-      className="inline-flex min-h-12 items-center rounded-full bg-primary px-7 font-semibold text-on-primary shadow-clay transition duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+      className={`inline-flex items-center gap-2.5 rounded-full bg-primary font-semibold text-on-primary transition duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 ${small ? "min-h-11 px-4 text-sm" : "min-h-13 px-7 shadow-clay"}`}
       href={PLAY}
     >
-      Get it on Google Play
+      {small ? "Get it on Play" : <>Get it on Google Play <span aria-hidden="true">→</span></>}
     </a>
   );
 }
@@ -56,26 +57,39 @@ function PlayButton() {
 export default function App() {
   return (
     <>
-      <header className="mx-auto max-w-2xl px-4 pt-14 pb-10 text-center md:pt-24">
-        <motion.div {...rise}>
-          <img className="mx-auto rounded-[22%] shadow-clay" src="assets/icon-512.png" alt="" width={72} height={72} />
-          <h1 className="mt-5 text-5xl font-extrabold tracking-tight md:text-6xl">Kept</h1>
-          <p className="mt-4 text-xl leading-relaxed text-muted">
-            Habits, to-dos, calendar, journal and groceries in one calm app. Offline, and synced to your own Google Drive.
+      <header className="flex min-h-svh flex-col">
+        <nav className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 md:px-6">
+          <a className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight" href="./">
+            <img className="rounded-[22%]" src="assets/icon.svg" alt="" width={32} height={32} />
+            Kept
+          </a>
+          <div className="flex items-center gap-7 font-semibold text-muted">
+            <a className="hidden md:inline" href="#tour">Tour</a>
+            <a className="hidden md:inline" href={POLICY}>Privacy</a>
+            <PlayButton small />
+          </div>
+        </nav>
+        <motion.div {...rise} className="px-4 pt-[6svh] text-center">
+          <p className="inline-flex items-center gap-2.5 rounded-full bg-card py-1.5 pr-4 pl-1.5 text-sm font-semibold text-muted shadow-clay">
+            <b className="rounded-full bg-primary px-2.5 py-0.5 text-xs text-on-primary">Free</b>
+            No ads, no account, no server
           </p>
-          <ul className="mt-6 flex flex-wrap justify-center gap-2">
-            {PROMISES.map((p) => (
-              <li key={p} className="flex items-center gap-2 rounded-full bg-card px-3 py-1.5 text-sm font-medium shadow-clay">
-                <span className="size-2 rounded-full bg-primary" aria-hidden="true" />
-                {p}
-              </li>
-            ))}
-          </ul>
+          <h1 className="mt-6 text-[clamp(46px,7vw,100px)] leading-[.96] tracking-[-.045em]">
+            Every good day,<br />
+            <span className="text-primary">filled in.</span>
+          </h1>
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted text-pretty md:text-xl">
+            Habits, to-dos, calendar, journal and groceries in one calm Android app. Tick a day and watch the year fill
+            up. Your data stays on your phone.
+          </p>
           <div className="mt-8"><PlayButton /></div>
         </motion.div>
+        <div className="flex flex-1 flex-col justify-end overflow-hidden pt-9 pb-12">
+          <Heatmap />
+        </div>
       </header>
 
-      <main>
+      <main id="tour">
         <ScrollTour steps={TOUR} />
       </main>
 
@@ -86,7 +100,7 @@ export default function App() {
       </section>
 
       <footer className="flex flex-wrap justify-center gap-x-6 px-4 pb-12 text-muted">
-        <a className="inline-flex min-h-11 items-center underline" href="https://ivansortino.github.io/kept-policy/">Privacy policy</a>
+        <a className="inline-flex min-h-11 items-center underline" href={POLICY}>Privacy policy</a>
         <a className="inline-flex min-h-11 items-center underline" href="https://ivansortino.github.io/kept-policy/it">Informativa sulla privacy</a>
         <a className="inline-flex min-h-11 items-center underline" href="mailto:kept.habit.tracker@gmail.com">kept.habit.tracker@gmail.com</a>
       </footer>
